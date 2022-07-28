@@ -25,12 +25,8 @@ io.on("connection", (socket) => {
   });
 });
 
-let count = 0;
 const getApiAndEmit = (socket) => {
-  setInterval(() => {
-    count++;
-  }, 1000);
-  socket.emit("Booking Services", count);
+  socket.emit("Booking Services", { bookingCount: 100 });
 };
 
 server.listen(port, () => console.log(`Listening on port ${port}`));
